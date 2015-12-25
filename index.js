@@ -13,15 +13,15 @@ function HttpAccessory(log, config) {
 
 	// url info
 	this.on_url    = config["on_url"];
-	this.on_body   = config["on_body"];
-	this.off_url   = config["off_url"];
-	this.off_body  = config["off_body"];
-	this.brightness_url = config["brightness_url"];
-	this.http_method = config["http_method"];
+	this.on_body   = config["on_body"] || "";
+	this.off_url   = config["off_url"] || "";
+	this.off_body  = config["off_body"] || "";
+	this.brightness_url = config["brightness_url"] || "";
+	this.http_method = config["http_method"] || "POST";
 	this.http_brightness_method = config["http_brightness_method"] || this.http_method;
-	this.username = config["username"];
-	this.password = config["password"];
-	this.sendimmediately = config["sendimmediately"];
+	this.username = config["username"] || "";
+	this.password = config["password"] || "";
+	this.sendimmediately = config["sendimmediately"] || "";
 	this.service = config["service"] || "Switch";
 	this.name = config["name"];
 	this.brightnessHandling = config["brightnessHandling"] || "no";
